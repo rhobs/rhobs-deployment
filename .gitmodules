@@ -1,3 +1,6 @@
 [submodule "thanos"]
 	path = thanos
 	url = https://github.com/thanos-io/thanos
+[submodule "thanos-operator"]
+	path = thanos-operator
+	url = https://github.com/thanos-community/thanos-operator
