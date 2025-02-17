@@ -6,8 +6,8 @@ ARG TARGETARCH
 WORKDIR /workspace
 
   # Copy the Go Modules manifests
-COPY thanos/go.mod go.mod
-COPY thanos/go.sum go.sum
+COPY thanos-operator/go.mod go.mod
+COPY thanos-operator/go.sum go.sum
 
 ENV GOFLAGS='-mod=mod'
   # cache deps before building and copying source so that we don't need to re-download as much
@@ -15,10 +15,10 @@ ENV GOFLAGS='-mod=mod'
 RUN go mod download
 
   # Copy the go source
-COPY thanos/cmd/main.go cmd/main.go
-COPY thanos/api/ api/
-COPY thanos/internal/controller/ internal/controller/
-COPY thanos/internal/pkg/ internal/pkg/
+COPY thanos-operator/cmd/main.go cmd/main.go
+COPY thanos-operator/api/ api/
+COPY thanos-operator/internal/controller/ internal/controller/
+COPY thanos-operator/internal/pkg/ internal/pkg/
 
   # Build
   # the GOARCH has not a default value to allow the binary be built according to the host where the command
